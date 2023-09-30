@@ -1,0 +1,11 @@
+diff --git a/ports/rp2/modules/_boot.py b/ports/rp2/modules/_boot.py
+index 099e5aba0..cdf36bcae 100644
+--- a/ports/rp2/modules/_boot.py
++++ b/ports/rp2/modules/_boot.py
+@@ -12,4 +12,6 @@ except:
+     vfs = os.VfsLfs2(bdev, progsize=256)
+ os.mount(vfs, "/")
+ 
++os.dupterm(machine.UART(0, 115200), 0)
++
+ del os, bdev, vfs
